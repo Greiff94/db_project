@@ -17,7 +17,6 @@ create table book(
     subTitle varchar(255),
     publisher varchar(255),
     author varchar(255),
-    numberOf numeric,
     branchId references branch(branchId)
 
 );
@@ -42,6 +41,37 @@ insert into branch values (6004, 'skarregata 6', 'ålesund bibliotek');
 insert into branch values (6003, 'borgundvegen 110', 'akademika ntnu');
 insert into branch values (6025, 'moavegen 3', 'moa bibliotek');
 /*books*/
+insert into book values (654321,'harry potter', 'the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling',  6004);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 insert into book values (654322,'harry potter', 'the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling',  6004);
 insert into book values (654323,'harry potter', 'the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling',  6002);
 
@@ -69,3 +99,6 @@ insert into book values (932744,'harry potter', 'the philosophers stone', 'bloom
 
 /*loans*/
 insert into bookLoan values (123456789, 654321, 6004, 1234, '11.11.2019');
+insert into bookLoan values (873696822, 687353, 6025, 1235, '11.11.2019');
+insert into bookLoan values (986539642, 927636, 6010, 1734, '11.11.2019');
+insert into bookLoan values (563384654, 654321, 6004, 9987, '11.11.2019');
