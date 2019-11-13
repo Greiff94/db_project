@@ -15,7 +15,13 @@ where b.title = 'harry potter The Chamber of Secrets'
 group by name
 ;
 
-select borrower.name, title from borrower
-inner join bookLoan bL on borrower.borrowerId = bL.borrowerId
-inner join book book on bL.bookId = book.bookId
-where title = 'harry potter the philosophers stone';
+/*•	Retrieve the names of all borrowers who borrowed the book titled "A" for each library branch.*/
+select b2.name , branch.name from branch
+inner join libraryBook lB on branch.branchId = lB.branchId
+inner join book b on lB.bookId = b.bookId
+inner join bookLoan bL on lB.branchId = bL.branchId
+inner join borrower b2 on bL.borrowerId = b2.borrowerId
+where title = 'harry potter the philosophers stone'
+group by branch.name;
+
+/*•	For each book that is loaned out from the branch "A" and whose due date is today, retrieve the book title, the borrower's name(s), and the borrower's address(es).*/
