@@ -24,4 +24,15 @@ inner join borrower b2 on bL.borrowerId = b2.borrowerId
 where title = 'harry potter the philosophers stone'
 group by branch.name;
 
-/*•	For each book that is loaned out from the branch "A" and whose due date is today, retrieve the book title, the borrower's name(s), and the borrower's address(es).*/
+/*•	For each book that is loaned out from the branch "A" and whose due date is today,
+  retrieve the book title, the borrower's name(s), and the borrower's address(es).*/
+select title, b.name, b.address from book
+inner join bookLoan bL on book.bookId = bL.bookId
+inner join borrower b on bL.borrowerId = b.borrowerId
+where bl.dueDate = '13.11.2019' and bl.branchId = 6004
+;
+/*•	For each branch, retrieve the branch name and the total number of books loaded out from that branch.*/
+select name as 'branchname:',  count(bookId)as 'nr of books loaned:' from branch
+inner join bookLoan bL on branch.branchId = bL.branchId
+group by name
+;

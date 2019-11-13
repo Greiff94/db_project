@@ -47,7 +47,15 @@ insert into bookLoan values (873696822, 687353, 6025, 1235, '11.11.2019', '14.02
 insert into bookLoan values (986539642, 927636, 6010, 1734, '11.11.2019', '1.12.2019');
 insert into bookLoan values (563384654, 654321, 6004, 9987, '11.11.2019','24.12.2019');
 
+insert into bookLoan values (976286483, 394574, 6004, 9987, '13.11.2019','24.12.2019');
+insert into bookLoan values (973758244, 932744, 6004, 1235, '13.11.2019','24.12.2019');
+insert into bookLoan values (334588629, 693639, 6004, 9987, '13.11.2019','24.12.2019');
+insert into bookLoan values (335655524, 927637, 6004, 9987, '13.11.2019','24.12.2019');
+insert into bookLoan values (898772244, 687355, 6010, 7983, '13.11.2019',' 24.01.2020');
 /*library books*/
+insert into libraryBook values (274923, 394574, 6004);
+insert into libraryBook values (200084, 932744, 6004);
+
 insert into libraryBook values (837464, 654321, 6004);
 insert into libraryBook values (323457, 654322, 6010);
 insert into libraryBook values (224497, 654323, 6003);
