@@ -1,3 +1,11 @@
+/**
+  this is all of our create sql codes for createing different tables in the database as well as the connection between them
+ */
+
+
+ /**
+   creates table a borrower (member)
+  */
 create table borrower(
     borrowerId numeric Primary Key,
     name varchar(255),
@@ -6,32 +14,44 @@ create table borrower(
     phoneNr numeric
 );
 
+/**
+  creates table a branch
+ */
 create table branch(
     branchId numeric primary key,
     address varchar(255),
     name varchar(255)
 );
 
-
+/**
+  creates table a book
+ */
 create table book(
-    bookId numeric primary key,
-    title varchar(255),
-    subTitle varchar(255),
-    publisher varchar(255),
-    author varchar(255)
+    bookId smallInt primary key,
+    title varchar(30),
+    subTitle varchar(30),
+    publisher varchar(30),
+    author varchar(30)
 );
 
+/**
+  creates table for a library book
+ */
 create table libraryBook(
-    id int primary key,
+    id smallInt primary key,
     bookId references book(bookId),
     branchId references branch(branchId)
 );
 
+/**
+  creates table for book loan
+ */
 create table bookLoan(
-    LoanId numeric primary key,
-    bokId references libraryBook(id),
+    LoanId smallInt primary key,
+    bookId references libraryBook(id),
     branchId references libraryBook(branchId),
     borrowerId references borrower(borrowerId),
-    dueDate dateTime
+    dueDate date,
+    returnDate date
 );
 

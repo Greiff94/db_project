@@ -47,7 +47,7 @@
     </key>
     <column id="18" parent="7" name="LoanId">
       <Position>1</Position>
-      <DataType>numeric|0s</DataType>
+      <DataType>smallInt|0s</DataType>
     </column>
     <column id="19" parent="7" name="bookId">
       <Position>2</Position>
@@ -60,11 +60,11 @@
     </column>
     <column id="22" parent="7" name="dueDate">
       <Position>5</Position>
-      <DataType>dateTime|0s</DataType>
+      <DataType>date|0s</DataType>
     </column>
     <column id="23" parent="7" name="returnDate">
       <Position>6</Position>
-      <DataType>dateTime|0s</DataType>
+      <DataType>date|0s</DataType>
     </column>
     <index id="24" parent="7" name="sqlite_autoindex_bookLoan_1">
       <NameSurrogate>1</NameSurrogate>
@@ -144,7 +144,7 @@
     </key>
     <column id="40" parent="10" name="id">
       <Position>1</Position>
-      <DataType>int|0s</DataType>
+      <DataType>smallInt|0s</DataType>
     </column>
     <column id="41" parent="10" name="bookId">
       <Position>2</Position>
