@@ -9,7 +9,6 @@
 create table borrower(
     borrowerId numeric Primary Key,
     name varchar(255),
-
     address varchar(255),
     phoneNr numeric
 );
@@ -30,8 +29,7 @@ create table book(
     bookId smallInt primary key,
     title varchar(30),
     subTitle varchar(30),
-    publisher varchar(30),
-    author varchar(30)
+    publisher varchar(30)
 );
 
 /**
@@ -48,10 +46,25 @@ create table libraryBook(
  */
 create table bookLoan(
     LoanId smallInt primary key,
-    bookId references libraryBook(id),
-    branchId references libraryBook(branchId),
+    Id references libraryBook(id),
     borrowerId references borrower(borrowerId),
     dueDate date,
     returnDate date
 );
+
+/**
+  creates a author
+ */
+create table author(
+    authorId primary key,
+    name text
+);
+
+/**
+  creates connection between author and book
+ */
+create table bookAuthor(
+    authorId references author(authorId),
+    bookId references book(bookId)
+)
 

@@ -24,7 +24,7 @@ group by name
 select b2.name as loanedBy, branch.name as branchName from branch
 inner join libraryBook lB on branch.branchId = lB.branchId
 inner join book b on lB.bookId = b.bookId
-inner join bookLoan bL on lB.branchId = bL.branchId
+inner join bookLoan bL on lB.id = bL.Id
 inner join borrower b2 on bL.borrowerId = b2.borrowerId
 where title = 'harry potter the philosophers stone'
 group by branch.name;
@@ -32,9 +32,11 @@ group by branch.name;
 /*4) For each book that is loaned out from the branch "ålesund bibliotek" and whose due date is today(13.11.2019),
   retrieve the book title, the borrower's name(s), and the borrower's address(es).*/
 select title, b.name as loanedBy, b.address from book
-inner join bookLoan bL on book.bookId = bL.bookId
+inner join libraryBook lB on book.bookId = lB.bookId
+inner join bookLoan bL on lB.id = bL.Id
+inner join branch b2 on lB.branchId = b2.branchId
 inner join borrower b on bL.borrowerId = b.borrowerId
-where bl.dueDate = 2019-11-13 and bl.branchId = (
+where bl.dueDate = 2019-11-13 and b2.branchId = (
     select branchId
     from branch
     where branch.name = 'ålesund bibliotek')
@@ -42,6 +44,7 @@ where bl.dueDate = 2019-11-13 and bl.branchId = (
 
 /*5) For each branch, retrieve the branch name and the total number of books loaded out from that branch.*/
 select name as BranchName,  count(bookId)as 'Nr of books loaned:' from branch
-inner join bookLoan bL on branch.branchId = bL.branchId
+inner join libraryBook lB on branch.branchId = lB.branchId
+inner join bookLoan bL on lB.id = bL.Id
 group by name
 ;
