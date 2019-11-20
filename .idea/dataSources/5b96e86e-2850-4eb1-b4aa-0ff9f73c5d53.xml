@@ -12,8 +12,8 @@
     <collation id="5" parent="1" name="RTRIM"/>
     <table id="6" parent="2" name="author"/>
     <table id="7" parent="2" name="book"/>
-    <table id="8" parent="2" name="bookLoan"/>
-    <table id="9" parent="2" name="bookauthor"/>
+    <table id="8" parent="2" name="bookAuthor"/>
+    <table id="9" parent="2" name="bookLoan"/>
     <table id="10" parent="2" name="borrower"/>
     <table id="11" parent="2" name="branch"/>
     <table id="12" parent="2" name="libraryBook"/>
@@ -22,10 +22,12 @@
     </table>
     <column id="14" parent="6" name="authorId">
       <Position>1</Position>
+      <NotNull>1</NotNull>
     </column>
     <column id="15" parent="6" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <index id="16" parent="6" name="sqlite_autoindex_author_1">
       <NameSurrogate>1</NameSurrogate>
@@ -40,180 +42,164 @@
     </key>
     <column id="18" parent="7" name="bookId">
       <Position>1</Position>
-      <DataType>numeric|0s</DataType>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="19" parent="7" name="title">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="20" parent="7" name="publisher">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="21" parent="7" name="sqlite_autoindex_book_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>bookId</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="22" parent="7">
+    <key id="21" parent="7">
       <ColNames>bookId</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_book_1</UnderlyingIndexName>
     </key>
-    <column id="23" parent="8" name="LoanId">
+    <column id="22" parent="8" name="authorId">
       <Position>1</Position>
-      <DataType>smallInt|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="8" name="Id">
+    <column id="23" parent="8" name="bookId">
       <Position>2</Position>
+      <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="8" name="borrowerId">
-      <Position>3</Position>
-    </column>
-    <column id="26" parent="8" name="dueDate">
-      <Position>4</Position>
-      <DataType>date|0s</DataType>
-    </column>
-    <column id="27" parent="8" name="returnDate">
-      <Position>5</Position>
-      <DataType>date|0s</DataType>
-    </column>
-    <index id="28" parent="8" name="sqlite_autoindex_bookLoan_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>LoanId</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="29" parent="8">
-      <ColNames>LoanId</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_bookLoan_1</UnderlyingIndexName>
-    </key>
-    <foreign-key id="30" parent="8">
-      <ColNames>Id</ColNames>
-      <RefTableName>libraryBook</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="31" parent="8">
-      <ColNames>borrowerId</ColNames>
-      <RefTableName>borrower</RefTableName>
-      <RefColNames>borrowerId</RefColNames>
-    </foreign-key>
-    <column id="32" parent="9" name="authorId">
-      <Position>1</Position>
-    </column>
-    <column id="33" parent="9" name="bookId">
-      <Position>2</Position>
-    </column>
-    <foreign-key id="34" parent="9">
+    <foreign-key id="24" parent="8">
       <ColNames>authorId</ColNames>
       <RefTableName>author</RefTableName>
       <RefColNames>authorId</RefColNames>
     </foreign-key>
-    <foreign-key id="35" parent="9">
+    <foreign-key id="25" parent="8">
       <ColNames>bookId</ColNames>
       <RefTableName>book</RefTableName>
       <RefColNames>bookId</RefColNames>
     </foreign-key>
-    <column id="36" parent="10" name="borrowerId">
+    <column id="26" parent="9" name="LoanId">
       <Position>1</Position>
-      <DataType>numeric|0s</DataType>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="10" name="name">
+    <column id="27" parent="9" name="Id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="10" name="address">
+    <column id="28" parent="9" name="borrowerId">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="39" parent="10" name="phoneNr">
+    <column id="29" parent="9" name="dueDate">
       <Position>4</Position>
-      <DataType>numeric|0s</DataType>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="40" parent="10" name="sqlite_autoindex_borrower_1">
-      <NameSurrogate>1</NameSurrogate>
+    <column id="30" parent="9" name="returnDate">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="31" parent="9">
+      <ColNames>LoanId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="9">
+      <ColNames>Id</ColNames>
+      <RefTableName>libraryBook</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="33" parent="9">
       <ColNames>borrowerId</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="41" parent="10">
+      <RefTableName>borrower</RefTableName>
+      <RefColNames>borrowerId</RefColNames>
+    </foreign-key>
+    <column id="34" parent="10" name="borrowerId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="10" name="address">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="10" name="phoneNr">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <key id="38" parent="10">
       <ColNames>borrowerId</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_borrower_1</UnderlyingIndexName>
     </key>
-    <column id="42" parent="11" name="branchId">
+    <column id="39" parent="11" name="branchId">
       <Position>1</Position>
-      <DataType>numeric|0s</DataType>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="11" name="address">
+    <column id="40" parent="11" name="address">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="11" name="name">
+    <column id="41" parent="11" name="name">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="45" parent="11" name="sqlite_autoindex_branch_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>branchId</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="46" parent="11">
+    <key id="42" parent="11">
       <ColNames>branchId</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_branch_1</UnderlyingIndexName>
     </key>
-    <column id="47" parent="12" name="id">
+    <column id="43" parent="12" name="id">
       <Position>1</Position>
-      <DataType>smallInt|0s</DataType>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="48" parent="12" name="bookId">
+    <column id="44" parent="12" name="bookId">
       <Position>2</Position>
+      <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="12" name="branchId">
+    <column id="45" parent="12" name="branchId">
       <Position>3</Position>
+      <NotNull>1</NotNull>
     </column>
-    <index id="50" parent="12" name="sqlite_autoindex_libraryBook_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="51" parent="12">
+    <key id="46" parent="12">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_libraryBook_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="52" parent="12">
+    <foreign-key id="47" parent="12">
       <ColNames>bookId</ColNames>
       <RefTableName>book</RefTableName>
       <RefColNames>bookId</RefColNames>
     </foreign-key>
-    <foreign-key id="53" parent="12">
+    <foreign-key id="48" parent="12">
       <ColNames>branchId</ColNames>
       <RefTableName>branch</RefTableName>
       <RefColNames>branchId</RefColNames>
     </foreign-key>
-    <column id="54" parent="13" name="type">
+    <column id="49" parent="13" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="55" parent="13" name="name">
+    <column id="50" parent="13" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="56" parent="13" name="tbl_name">
+    <column id="51" parent="13" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="57" parent="13" name="rootpage">
+    <column id="52" parent="13" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="58" parent="13" name="sql">
+    <column id="53" parent="13" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>

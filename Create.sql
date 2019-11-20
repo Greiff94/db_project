@@ -1,5 +1,5 @@
 /**
-  this is all of our create sql codes for createing different tables in the database as well as the connection between them
+  this is all of our create sql codes for creating different tables in the database as well as the connection between them
  */
 
 
@@ -7,64 +7,63 @@
    creates table a borrower (member)
   */
 create table borrower(
-    borrowerId numeric Primary Key,
-    name varchar(255),
-    address varchar(255),
-    phoneNr numeric
+    borrowerId integer Primary Key not null,
+    name text not null,
+    address text not null,
+    phoneNr integer
 );
 
 /**
   creates table a branch
  */
 create table branch(
-    branchId numeric primary key,
-    address varchar(255),
-    name varchar(255)
+    branchId integer primary key not null,
+    address text not null,
+    name text not null
 );
 
 /**
   creates table a book
  */
 create table book(
-    bookId smallInt primary key,
-    title varchar(30),
-    subTitle varchar(30),
-    publisher varchar(30)
+    bookId integer primary key not null,
+    title text not null,
+    publisher text not null
 );
 
 /**
   creates table for a library book
  */
 create table libraryBook(
-    id smallInt primary key,
-    bookId references book(bookId),
-    branchId references branch(branchId)
+    id integer primary key not null,
+    bookId references book(bookId) not null,
+    branchId references branch(branchId) not null
 );
 
 /**
   creates table for book loan
  */
 create table bookLoan(
-    LoanId smallInt primary key,
-    Id references libraryBook(id),
-    borrowerId references borrower(borrowerId),
-    dueDate date,
-    returnDate date
+    LoanId integer primary key not null,
+    Id references libraryBook(id) not null,
+    borrowerId references borrower(borrowerId) not null,
+    dueDate date not null,
+    returnDate date not null
 );
 
 /**
   creates a author
  */
 create table author(
-    authorId primary key,
-    name text
+    authorId primary key not null,
+    name text not null
 );
 
 /**
   creates connection between author and book
  */
 create table bookAuthor(
-    authorId references author(authorId),
-    bookId references book(bookId)
+    authorId references author(authorId) not null,
+    bookId references book(bookId) not null
 )
 
