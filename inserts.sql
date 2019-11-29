@@ -14,6 +14,11 @@ insert into branch values (6002, 'kirkegata 1', 'akademika');
 insert into branch values (6004, 'skarregata 6', 'ålesund bibliotek');
 insert into branch values (6003, 'borgundvegen 110', 'akademika ntnu');
 insert into branch values (6025, 'moavegen 3', 'moa bibliotek');
+insert into branch values (6011, 'hellandbakken 11', 'books for you');
+insert into branch values (6008, 'kirkegata 12', 'akademika skarbørvika');
+insert into branch values (6097, 'hans strøms gate 76', 'ålesund bibliotek for studenter');
+insert into branch values (6053, 'borgundvegen 412', 'akademika kremmergården');
+insert into branch values (6055, 'moavegen 35 B', 'centrum bibliotek');
 
 /*inserts books*/
 insert into book values (654321,'harry potter the philosophers stone', 'bloomsbury publishing');
