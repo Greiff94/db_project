@@ -45,7 +45,7 @@ create table libraryBook(
  */
 create table bookLoan(
     LoanId integer primary key not null,
-    Id references libraryBook(id) not null,
+    bookId references Book(bookid) not null,
     borrowerId references borrower(borrowerId) not null,
     dueDate date not null,
     returnDate date not null
