@@ -2,11 +2,16 @@
   for all the different tables */
 
 /*inserts borrowers*/
-insert INTO borrower VALUES (1234, 'sander keeedklang', 'hans strøms gate 8', 93249909);
-insert INTO borrower VALUES (1235, 'yusuf harmankaya', 'borgundvegen 401', 95864173);
-insert INTO borrower VALUES (1734, 'sigurd ous', 'løvenvoldgata 60', 40607230);
-insert INTO borrower VALUES (7983, 'sigurd bohus', 'keiser wilhelmsgate 60', 40723180);
-insert INTO borrower VALUES (9987, 'sigurd greiff', 'hans strøms gate 8', 99168687);
+insert INTO borrower VALUES (1234, 'Sander Keeedklang', 'hans strøms gate 8', 93249909);
+insert INTO borrower VALUES (1235, 'Yusuf Harmankaya', 'borgundvegen 401', 95864173);
+insert INTO borrower VALUES (1231, 'Sigurd Ous', 'løvenvoldgata 60', 40607230);
+insert INTO borrower VALUES (1232, 'Sigurd Bohus', 'keiser wilhelmsgate 60', 40723180);
+insert INTO borrower VALUES (1233, 'Sigurd Greiff', 'Tullegata 8', 99168687);
+insert INTO borrower VALUES (1236, 'Mathew Mathewson', 'Tiendeholmsvegen 14', 99123456);
+insert INTO borrower VALUES (1237, 'Anders Andersen', 'Tiendeholmsvegen 13', 99163333);
+insert INTO borrower VALUES (1238, 'Mathias Forberg', 'løvenvoldgata 33', 47381903);
+insert INTO borrower VALUES (1239, 'Sanders Olsen', 'Svømmegata 13', 99168123);
+insert INTO borrower VALUES (1240, 'Sander Hurlen', 'Borgundvegen 13', 99160283);
 
 /*inserts branches*/
 insert into branch values (6010, 'borgundvegen 110', 'akademika');
@@ -14,6 +19,8 @@ insert into branch values (6002, 'kirkegata 1', 'akademika');
 insert into branch values (6004, 'skarregata 6', 'ålesund bibliotek');
 insert into branch values (6003, 'borgundvegen 110', 'akademika ntnu');
 insert into branch values (6025, 'moavegen 3', 'moa bibliotek');
+
+
 
 /*inserts books*/
 insert into book values (654321,'harry potter the philosophers stone', 'bloomsbury publishing');
@@ -76,6 +83,8 @@ insert into libraryBook values (271828, 693635, 6010);
   inserts authors
  */
 insert into author values (184723, 'J.K. Rowling');
+insert into author values (113994, 'Jo Nesbø');
+insert into author values (144302, 'Jordan Peterson');
 
 /**
   inserts book authors for each book
