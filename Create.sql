@@ -5,12 +5,12 @@
  /**
    drop functions used when updating create functions
   */
-drop table book;
-drop table borrower;
-drop table branch;
-drop table libraryBook;
-drop table bookLoan;
-drop table bookAuthor;
+drop table if exists book;
+drop table if exists borrower;
+drop table if exists branch;
+drop table if exists libraryBook;
+drop table if exists bookLoan;
+drop table if exists bookAuthor;
 
  /**
    creates table a borrower (member)
@@ -54,7 +54,7 @@ create table libraryBook(
  */
 create table bookLoan(
     LoanId integer primary key not null,
-    bookId references Book(bookid) not null,
+    bookId references libraryBook(bookid) not null,
     borrowerId references borrower(borrowerId) not null,
     dueDate date not null,
     returnDate date not null

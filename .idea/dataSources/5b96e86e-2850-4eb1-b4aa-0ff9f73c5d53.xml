@@ -99,7 +99,7 @@
     </key>
     <foreign-key id="29" parent="8">
       <ColNames>bookId</ColNames>
-      <RefTableName>book</RefTableName>
+      <RefTableName>libraryBook</RefTableName>
       <RefColNames>bookid</RefColNames>
     </foreign-key>
     <foreign-key id="30" parent="8">

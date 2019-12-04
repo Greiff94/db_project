@@ -48,5 +48,32 @@ where bl.dueDate = 2019-11-13 and b2.branchId = (
 select name as BranchName,  count(b.bookId)as 'Nr of books loaned:' from branch
 inner join libraryBook lB on branch.branchId = lB.branchId
 inner join book b on lB.bookId = b.bookId
-group by name
-;
+group by name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
