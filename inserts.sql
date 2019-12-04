@@ -7,6 +7,11 @@ insert INTO borrower VALUES (1235, 'yusuf harmankaya', 'borgundvegen 401', 95864
 insert INTO borrower VALUES (1734, 'sigurd ous', 'løvenvoldgata 60', 40607230);
 insert INTO borrower VALUES (7983, 'sigurd bohus', 'keiser wilhelmsgate 60', 40723180);
 insert INTO borrower VALUES (9987, 'sigurd greiff', 'hans strøms gate 8', 99168687);
+insert into borrower values (4321, 'isabel borgen', 'hans strøms gate 8', 98835322);
+insert into borrower values (8364, 'mathias forberg', 'skarbørvika 231', 44902703);
+insert into borrower values (1859, 'hans pedersen', 'kongens gate 32c', 99334753);
+insert into borrower values (6794,'nils henriksen', 'kongens gate 32c', 97080267);
+insert into borrower values (5683, 'wonda wall', 'kongens gate 32c', 95989458);
 
 /*inserts branches*/
 insert into branch values (6010, 'borgundvegen 110', 'akademika');
@@ -21,26 +26,29 @@ insert into branch values (6053, 'borgundvegen 412', 'akademika kremmergården')
 insert into branch values (6055, 'moavegen 35 B', 'centrum bibliotek');
 
 /*inserts books*/
-insert into book values (654321,'harry potter the philosophers stone', 'bloomsbury publishing');
-insert into book values (654322,'harry potter the philosophers stone', 'bloomsbury publishing');
-insert into book values (654323,'harry potter the philosophers stone', 'bloomsbury publishing');
-insert into book values (687353,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (687354,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (687355,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (687356,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (687358,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (687359,'harry potter The Chamber of Secrets', 'bloomsbury publishing');
-insert into book values (927636,'harry potter The Prisoner of Azkaban', 'bloomsbury publishing');
-insert into book values (927637,'harry potterThe Prisoner of Azkaban', 'bloomsbury publishing');
-insert into book values (368698,'harry potter The Goblet of Fire', 'bloomsbury publishing');
-insert into book values (292347,'harry potter The Order of the Phoenix', 'bloomsbury publishing');
-insert into book values (292348,'harry potter The Order of the Phoenix', 'bloomsbury publishing');
-insert into book values (693638,'harry potter The Half-Blood Prince', 'bloomsbury publishing');
-insert into book values (693639,'harry potter  Half-Blood Prince', 'bloomsbury publishing');
-insert into book values (693630,'harry potter The Half-Blood Prince', 'bloomsbury publishing');
-insert into book values (693635,'harry potter The Half-Blood Prince', 'bloomsbury publishing');
-insert into book values (394574,'harry potter The Deathly Hallows', 'bloomsbury publishing');
-insert into book values (932744,'harry potter the philosophers stone', 'bloomsbury publishing');
+insert into book values (654321,'harry potter the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (654322,'harry potter the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (654323,'harry potter the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687353,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687354,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687355,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687356,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687358,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (687359,'harry potter The Chamber of Secrets', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (927636,'harry potter The Prisoner of Azkaban', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (927637,'harry potterThe Prisoner of Azkaban', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (368698,'harry potter The Goblet of Fire', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (292347,'harry potter The Order of the Phoenix', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (292348,'harry potter The Order of the Phoenix', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (693638,'harry potter The Half-Blood Prince', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (693639,'harry potter  Half-Blood Prince', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (693630,'harry potter The Half-Blood Prince', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (693635,'harry potter The Half-Blood Prince', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (394574,'harry potter The Deathly Hallows', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (932744,'harry potter the philosophers stone', 'bloomsbury publishing', 'J.K. Rowling');
+insert into book values (123234, 'The Hunger Games: Catching Fire', 'Scholastic', 'Suzanne Collins');
+insert into book values (124221, 'The Hunger Games: Mockingjay', 'Scholastic', 'Suzanne Collins');
+insert into book values (125068, 'The Hunger Games', 'Scholastic', 'Suzanne Collins');
 
 
 /*inserts book loans*/
@@ -53,6 +61,7 @@ insert into bookLoan values (973758244, 200084, 1235, 2019-11-13,2019-12-24);
 insert into bookLoan values (334588629, 666643, 9987, 2019-11-13,2019-12-24);
 insert into bookLoan values (335655524, 222356, 9987, 2019-11-13,2019-12-24);
 insert into bookLoan values (898772244, 553252, 7983, 2019-11-13,2020-01-24);
+insert into bookLoan values (123987456, 998653, 5683, 2019-11-13, 202-01-24);
 
 /*inserts library books*/
 insert into libraryBook values (274923, 394574, 6004);
@@ -75,33 +84,21 @@ insert into libraryBook values (234523, 693638, 6010);
 insert into libraryBook values (666643, 693639, 6004);
 insert into libraryBook values (234645, 693630, 6010);
 insert into libraryBook values (271828, 693635, 6010);
-
-
+insert into libraryBook values (998653, 123234, 6097);
+insert into libraryBook values (955773, 124221, 6053);
+insert into libraryBook values (638899, 125068, 6055);
 /**
   inserts authors
  */
-insert into author values (184723, 'J.K. Rowling');
+insert into bookAuthor values (10, 'J.K. Rowling');
+insert into bookAuthor values (11, 'ERNEST HEMINGWAY');
+insert into bookAuthor values (12, 'JOAN DIDION');
+insert into bookAuthor values (13, 'RAY BRADBURY');
+insert into bookAuthor values (14, 'GEORGE R.R. MARTIN');
+insert into bookAuthor values (15, 'GILLIAN FLYNN');
+insert into bookAuthor values (16, 'VLADIMIR NABOKOV');
+insert into bookAuthor values (17, 'ERIK LARSON');
+insert into bookAuthor values (18, 'MAYA ANGELOU');
+insert into bookAuthor values (19, 'Suzanne Collins');
 
-/**
-  inserts book authors for each book
- */
-insert into bookAuthor values (654321, 'J.K. Rowling');
-insert into bookAuthor values (654322, 'J.K. Rowling');
-insert into bookAuthor values (654323, 'J.K. Rowling');
-insert into bookAuthor values (687353, 'J.K. Rowling');
-insert into bookAuthor values (687354, 'J.K. Rowling');
-insert into bookAuthor values (687355, 'J.K. Rowling');
-insert into bookAuthor values (687356, 'J.K. Rowling');
-insert into bookAuthor values (687358, 'J.K. Rowling');
-insert into bookAuthor values (687359, 'J.K. Rowling');
-insert into bookAuthor values (927636, 'J.K. Rowling');
-insert into bookAuthor values (927637, 'J.K. Rowling');
-insert into bookAuthor values (368698, 'J.K. Rowling');
-insert into bookAuthor values (292347, 'J.K. Rowling');
-insert into bookAuthor values (292348, 'J.K. Rowling');
-insert into bookAuthor values (693638, 'J.K. Rowling');
-insert into bookAuthor values (693639, 'J.K. Rowling');
-insert into bookAuthor values (693630, 'J.K. Rowling');
-insert into bookAuthor values (693635, 'J.K. Rowling');
-insert into bookAuthor values (394574, 'J.K. Rowling');
-insert into bookAuthor values (932744, 'J.K. Rowling');
+
